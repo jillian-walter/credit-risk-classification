@@ -1,7 +1,7 @@
 # credit-risk-classification
 Challenge for Module 20 - Supervised Machine Learning
 
-This challenge utilizes different Supervised Machine Learning tactics to create and evaluate a model based on loan default risk, using data from a peer-to-peer lending services company to build a model that can identify the creditworthiness of loan borrowers. 
+This challenge utilizes different Supervised Machine Learning tactics to create and evaluate a model based on loan default risk, using data from a peer-to-peer lending services company to build a model that can identify the creditworthiness of loan borrowers. Supervised Machine Learning differs from Unsupervised Machine Learning as we are providing the model with an expected output (Y) and asking the machine to create predictions, whereas with Unsupervised Machine Learning we are not defining the output in the data and are asking the machine to describe what is going on within the data. 
 
 Libraries used in this analysis include: 
 - import numpy as np
