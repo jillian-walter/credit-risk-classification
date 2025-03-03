@@ -1,6 +1,7 @@
 # credit-risk-classification
 Challenge for Module 20 - Supervised Machine Learning
 
+# Overview of the Analysis: 
 This challenge utilizes different Supervised Machine Learning tactics to create and evaluate a model based on loan default risk, using data from a peer-to-peer lending services company to build a model that can identify the creditworthiness of loan borrowers. Supervised Machine Learning differs from Unsupervised Machine Learning as we are providing the model with an expected output (Y) and asking the machine to create predictions, whereas with Unsupervised Machine Learning we are not defining the output in the data and are asking the machine to describe what is going on within the data. 
 
 Libraries used in this analysis include: 
@@ -22,7 +23,13 @@ From there, we use the **"train_test_split"** function from the sklearn.linear_m
 To create the Logistic Regression Model, we start by importing the **LogisticRegression** library from SkLearn and create the loan_log_classifier to instantiate the model, using a random state of 1 and increasing the max iterations. We then fit the model using the X_Train and Y_Train data.
 Once fitted, we can use the accuracy score (F1 score) to determine the efficacy of the model. For this, we use X_Test data rather than Training data, and use the SKlearn **.predict()** formula to get the Y_Pred value. From here we can generate an array of predicted y values and a topline accuracy score, which in this case is very high at 99.3%.
 
-The predicted Y values (y_pred) and actual Y values (y_test) are compared using a confusion matrix, which shows the number of Y values that were predicted accurately as either a 0 or a 1, those who were predicted to be 0 but were actually 1 (false negative) and those that were predicted to be a 1 but were actually a 0. We can see that the model accurately predicted 19,240 values, predicted 107 false positives and 37 false negatives. The total F1 score is 99.3%, but the F1 score for a false negative was 89%. In this case, false negatives are more important to look at as the bank can accidentally give someone a loan based on the model telling them that they were healthy, but then having the person default on the loan. While the F1 score for high risk loan predictions is lower than healthy predictions, it is still above an 80% and can therefore be considered highly accurate. However, this is up to each individual banks' discretion based on how much risk they are comfortable with. 
+# Summary & Results:  
+
+- The F1 score, also known as the "accuracy score" represents the "final answer" of the accuracy of the model. This represents a percentage detailing the amount of data that is explained/accurately predicted by the model, and is a weighted average between Precision and Recall. In this case, the F1 score is 99.3%.
+- Precision represents True Positives/(True Positives + False Positives). The Higher the Precision, the lower the number of False Positives. In this case, the precision is close to 100%.
+- Recall represents True Positives/(True Positives + False Negatives). The Higher the Recall, the lower the number of False Negatives. In this case, the recall is 89%.
+  
+The predicted Y values (y_pred) and actual Y values (y_test) are compared using a confusion matrix, which shows the number of Y values that were predicted accurately as either a 0 or a 1, those who were predicted to be 0 but were actually 1 (false negative) and those that were predicted to be a 1 but were actually a 0. We can see that the model accurately predicted 19,240 values, predicted 107 false positives and 37 false negatives. The total F1 score is 99.3%, but the F1 score for a false negative was 89%. In this case, false negatives (Recall accuracy) is more important to look at as the bank can accidentally give someone a loan based on the model telling them that they were healthy, but then having the person default on the loan. While the F1 score for high risk loan predictions is lower than healthy predictions, it is still above an 80% and can therefore be considered highly accurate. However, this is up to each individual banks' discretion based on how much risk they are comfortable with. 
 
 ![image](https://github.com/user-attachments/assets/843bb5cf-9022-4f09-b255-5a3896f63219)
 
